@@ -10,7 +10,7 @@ html {
 }
 
 * {
-    border: 1px solid black;
+    bordedr: 1px solid black;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-family: "Marianne", Arial, sans-serif;
 }
@@ -29,7 +29,6 @@ body {
     background-repeat: no-repeat;  */
 }
 
-
 .page-wrapper {
     height: 100%;
     display: grid;
@@ -41,18 +40,24 @@ body {
     background-size: cover;
     background-repeat: no-repeat; 
     margin: 0px 10px 0px 10px; */
+    
 
 }
-
+.nav-left{
+    margin-top: 1.5px;
+}
+.nav-right{
+    margin-top: 5px;
+}
 .header {
     grid-row: 1;
-    backgrounjd: rgb(168, 153, 18);
-    height: 35px;
+    background: rgb(223, 221, 210);
+    height: 32px;
     /* fixe */
     display: flex;
     justify-content: space-between;
 
-    margin-top: 3px;
+    margin-top: 0px;
 }
 
 
@@ -100,7 +105,7 @@ body {
     align-items: flex-start;
 }
 
-.sigin {
+.sigwwwwwin {
     position: relative;
 }
 
@@ -123,6 +128,9 @@ body {
     /* display: block; */
     padding: 4px 4px;
     border-bottom: 1px solid #a59999;
+    color: rgb(155, 149, 149);
+    background:#ffffff;
+    width: 100px;
     /* background: #dfd5d5; */
 }
 
@@ -131,38 +139,91 @@ body {
 
 .burger {
     position: relative;
+    right: 10px;
 }
 
-.item-burger-hidden {
-    display: none;
-}
 
 .item-burger-visible {
     position: absolute;
+    dispslay: block;
     /* absolute pck le height du header est court pour eviter le bug au click */
     right: 0;
+    bdackground: #000;
+    width: 150px;
 }
 
 /* css du sub-item signin in burger */
-.item-signin-mobile-hidden {
+.item-mobile {
     display: none;
+}
+/* css du sign pc */
+.signin{
+    position: relative;
+    width: 70px;
+    height: 28px;
+}
+.item-signin-visible{
+    
+    position: relative;
+    top: 10px;
+    
+}
+.item-signin-visible li{
+    width: 80px;
+}
+.item-signin-visible li:hover{
+    width: 80px;
+    color: #ffffff;
+    background:rgb(155, 149, 149);
 }
 
 
+.item-catalogue{
+    posiation: relative;
+    topa: 0px;
+}
+.item-catalogue li{
+    color:#ffffff;
+    background: rgb(155, 149, 149);
+    padding: 4px 4px;
+}
 
+.item-catalogue li:first-child {
+    border-bottom: 1px solid rgb(5, 5, 5);
+}
+
+.item-catalogue li {
+    color: #ffffff;
+    border-bottom: 1px solid rgb(7, 7, 7);
+}
+
+
+.item-catalogue li:hover{
+    color: rgb(155, 149, 149);
+    background:#ffffff;
+}
 
 
 .content-section {
     grid-row: 2;
     backgrocund: rgb(239, 239, 240);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url('../img/logo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
+.oxlibrary{
+    font-size: 40px;
+    backgrdound: #ffffff;
+    color: rgb(34, 134, 216);
+}
 
 .page-footer {
     grid-row: 3;
-    background: rgb(228, 225, 225);
+    background: rgb(231, 229, 229);
     height: 50px;
     display: flex;
     justify-content: space-between;
@@ -179,6 +240,15 @@ body {
 .page-footer li {
     margin: 10px 20px;
 
+}
+
+
+
+
+@media only screen and (min-width: 668px) {
+    .item-burger-hidden {
+        display: none;
+    }
 }
 
 
@@ -202,15 +272,85 @@ body {
         position: relative;
         display: block;
         padding: 10px;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
         background: #817b7b;
+        border-bottom: 1px solid rgb(204, 197, 197);
     }
 
-    .itehm-mobile {
+    .item-mobile {}
+
+    .burger {
+        /* position: absolute;
+        top: 60px;
+        left: 100px; */
+    }
+
+    /* side right */
+    .item-burger-visible li {
+        background: #cabfbf;
+        padding: 4px 4px;
+    }
+
+    .item-signin-mobile-hidden {
+        display: none;
+    }
+
+    .item {
         display: block;
     }
 
-    .item-signin-mobile-visible {}
+    .item-signin-mobile-visible li {
+        color: #ffffff;
+    }
+
+    .item-signin-mobile-visible li:first-child {
+        border-bottom: 1px solid rgb(155, 149, 149);
+    }
+
+    .item-catalogue li {
+        color: #ffffff;
+        border-bottom: 1px solid rgb(155, 149, 149);
+    }
+
+    /* les hovers right side */
+    .item-catalogue li:hover{
+        color: rgb(155, 149, 149);
+        background:#ffffff;
+    }
+    .item-mobile li:hover{
+        color: rgb(155, 149, 149);
+        background:#ffffff;
+    }
+    .item-burger-hidden>li{
+        color: rgb(83, 74, 74);
+    }
+
+
+
+
+
+
+
+    .item-burger-hidden {
+        position: absolute;
+        righdt: -300px;
+        transform: translateX(180px);
+        transition: transform 1s;
+    }
+
+    .item .item-burger-hidden {
+        transform: translateX(10px);
+        transition: transform 1s;
+
+    }
+    .oxlibrary{
+        font-size: 25px;
+        
+    }
+
+   
+
+    .item-signin-mobile-hidden {}
 
     .page-footer {
         height: 100px;
