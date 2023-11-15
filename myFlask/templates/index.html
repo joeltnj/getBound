@@ -1,0 +1,36 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Flask + MongoDB</title>
+</head>
+<body>
+    <h1>Enregistrement / Connexion</h1>
+
+    <!-- Formulaire d'enregistrement -->
+    <h2>Enregistrement</h2>
+    <form method="POST" action="{{ url_for('enregistrer_utilisateur') }}">
+        <label for="nom_enregistrement">Nom :</label>
+        <input type="text" id="nom_enregistrement" name="nom_enregistrement" required>
+        <br>
+        <label for="mot_de_passe_enregistrement">Mot de passe :</label>
+        <input type="password" id="mot_de_passe_enregistrement" name="mot_de_passe_enregistrement" required>
+        <br>
+        <input type="submit" value="Enregistrer">
+    </form>
+
+    <!-- Formulaire de connexion -->
+    <h2>Connexion</h2>
+    <form method="POST" action="{{ url_for('verifier_connexion') }}">
+        <label for="nom_connexion">Nom :</label>
+        <input type="text" id="nom_connexion" name="nom_connexion" required>
+        <br>
+        <label for="mot_de_passe_connexion">Mot de passe :</label>
+        <input type="password" id="mot_de_passe_connexion" name="mot_de_passe_connexion" required>
+        <br>
+        <input type="submit" value="Se connecter">
+    </form>
+</body>
+</html>
