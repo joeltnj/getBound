@@ -1,11 +1,13 @@
 
 # Import des modules nécessaires
+from secrets import token_hex
 from flask import Flask, render_template, request, redirect, url_for, session
 from pymongo import MongoClient
 
 # Initialisation de l'application Flask
 app = Flask(__name__)
-app.secret_key = 'cle' 
+# app.secret_key = 'cle' 
+app.secret_key = token_hex(16)
 
 # Connexion à MongoDB Atlas avec la base de données 'joeBASE'
 client = MongoClient('mongodb://localhost:27017/')
@@ -22,6 +24,9 @@ collection = db['lesUsers']
 def hello_world():
     return render_template("index.html")
 
+
+
+
 # new for login
 @app.route('/login/')
 def login():
@@ -30,10 +35,6 @@ def login():
 
 
 
-
-
-
-# Soumission du formulaire de connexion
 @app.route('/login/', methods=['POST'])
 def login_valider():
     # Récupération des données du formulaire
@@ -58,6 +59,8 @@ def login_valider():
 @app.route('/register/')
 def register():
     return render_template('page/register.html')
+
+
 # new register soumission
 @app.route('/register/', methods=["POST"])
 def register_valider():

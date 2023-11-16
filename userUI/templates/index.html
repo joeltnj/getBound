@@ -6,13 +6,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <script src="https://kit.fontawesome.com/5c6f45e03d.js" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
     <title>Home</title>
 </head>
 
+
+
 <body>
-    <p><a href="{{ url_for('login') }}">Connexion</a></p>
-    <p><a href="{{ url_for('register') }}">inscription</a></p>
+    <div class="page-wrapper">
+        <header class="header">
+            <!-- nav left -->
+            <nav class="nav-left">
+                <ul class="item-left">
+                    <li>Books</li>
+                    <li>Articles</li>
+                </ul>
+            </nav>
+
+            <!-- nav right -->
+            <nav class="nav-right">
+                <ul class="item-right">
+                    <!-- sing in -->
+                    <li class="signin">Sign In&nbsp;&nbsp;⏷
+                        <ul class="item-signin-hidden item-signin-visible">
+                            <li><a href="{{ url_for('login') }}">Login</a></li>
+                            <li><a href="{{ url_for('register') }}">S'inscrire</a></li>
+                        </ul>
+                    </li>
+                    <!--  -->
+                    <li class="search"><i class="fa-solid fa-magnifying-glass"></i></i></li>
+
+                    <!-- burger -->
+                    <li class="burger">
+                        <div class="div-burger ">
+                            <i class="bar-burger fa-sharp fa-solid fa-bars"></i>
+                        </div>
+                        <ul class="item-burger-hidden item-burger-visible ">
+                            <li class="item-mobile">Sign In&nbsp;&nbsp;⏷
+                                <ul class="item-signin-mobile-hidden item-signin-mobile-visible ">
+                                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                                    <li><a href="{{ url_for('register') }}">S'inscrire</a></li>
+                                </ul>
+                            </li>
+                            <ul class="item-catalogue">
+                                <li>Catalogue</li>
+                                <li>Books</li>
+                                <li>Articles</li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+
+
+        <section class="content-section">
+            <p class="oxlibrary">Welcome to OX-LIBRARY</p>
+        </section>
+        <footer class="page-footer">
+
+            <ul class="foot-left">
+                <li>OX-Library 2.0</li>
+            </ul>
+            <ul class="foot-middle">
+                <li>support@oxlibrary.com</li>
+                <li>Terms</li>
+                <li>FAQ</li>
+            </ul>
+            <ul class="foot-right">
+                <li>Privacy</li>
+                <li>MongoDB</li>
+            </ul>
+        </footer>
+    </div>
 </body>
 
 </html>

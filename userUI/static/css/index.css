@@ -1,7 +1,361 @@
-body{
-    background: #ce4747;
+html {
+    box-sizing: border-box;
+    height: 100%;
 }
 
-h1{
-    background: #d34a4a;
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+* {
+    bordedr: 1px solid black;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marianne", Arial, sans-serif;
+}
+
+body {
+    height: 100%;
+    background-color: #ffffff;
+    /* background: rgb(168, 150, 139);
+    display: flex;
+    flex-direction: column; */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-sfamily: "Marianne", Arial, sans-serif;
+    font-size: 15px;
+    /* background-image: url('../img/logo.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;  */
+}
+
+.page-wrapper {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 3fr; */
+    grid-template-rows: auto 1fr auto;
+    /* background: #f1efef; */
+    /* background-image: url('../img/logo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    margin: 0px 10px 0px 10px; */
+    
+
+}
+.nav-left{
+    margin-top: 1.5px;
+}
+.nav-right{
+    margin-top: 5px;
+}
+.header {
+    grid-row: 1;
+    background: rgb(223, 221, 210);
+    height: 32px;
+    /* fixe */
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 0px;
+}
+
+
+.item-left {
+    width: 400px;
+    display: flex;
+    color: #ffffff;
+    /* align-items: start; */
+    justify-content: space-between;
+}
+
+.item-left ul {
+    height: 35px;
+    width: 300px;
+}
+
+.item-left li {
+    width: 300px;
+
+}
+
+.item-left li {
+    height: 29px;
+    font-size: 15px;
+    margin: 0px 5px 0px 0px;
+    padding: 3px 10px;
+    background-color: rgb(122, 185, 243);
+}
+
+.item-left li:nth-child(2) {
+    margin-left: 10px;
+    background-color: rgb(143, 194, 67);
+
+}
+
+
+/* right */
+.nav-right {
+    width: 200px;
+}
+
+.item-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.sigwwwwwin {
+    position: relative;
+}
+
+/* item signin hidden */
+.item-signin-hidden {
+    display: none;
+    color: rgb(121, 117, 117);
+    border-bottom: 1px solid #d4d0d0;
+    background: #dfd5d5;
+
+}
+
+/* to display item hidden */
+.item-signin-visible {
+    height: 50px;
+    position: absolute;
+}
+
+.item-signin-visible li {
+    /* display: block; */
+    padding: 4px 4px;
+    border-bottom: 1px solid #a59999;
+    color: rgb(155, 149, 149);
+    background:#ffffff;
+    width: 100px;
+    /* background: #dfd5d5; */
+}
+
+/* css du burger */
+/* hidde item burger */
+
+.burger {
+    position: relative;
+    right: 10px;
+}
+
+
+.item-burger-visible {
+    position: absolute;
+    dispslay: block;
+    /* absolute pck le height du header est court pour eviter le bug au click */
+    right: 0;
+    bdackground: #000;
+    width: 150px;
+}
+
+/* css du sub-item signin in burger */
+.item-mobile {
+    display: none;
+}
+/* css du sign pc */
+.signin{
+    position: relative;
+    width: 70px;
+    height: 28px;
+}
+.item-signin-visible{
+    
+    position: relative;
+    top: 10px;
+    
+}
+.item-signin-visible li{
+    width: 80px;
+}
+.item-signin-visible li:hover{
+    width: 80px;
+    color: #ffffff;
+    background:rgb(155, 149, 149);
+}
+
+
+.item-catalogue{
+    posiation: relative;
+    topa: 0px;
+}
+.item-catalogue li{
+    color:#ffffff;
+    background: rgb(155, 149, 149);
+    padding: 4px 4px;
+}
+
+.item-catalogue li:first-child {
+    border-bottom: 1px solid rgb(5, 5, 5);
+}
+
+.item-catalogue li {
+    color: #ffffff;
+    border-bottom: 1px solid rgb(7, 7, 7);
+}
+
+
+.item-catalogue li:hover{
+    color: rgb(155, 149, 149);
+    background:#ffffff;
+}
+
+
+.content-section {
+    grid-row: 2;
+    backgrocund: rgb(239, 239, 240);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/logo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.oxlibrary{
+    font-size: 40px;
+    backgrdound: #ffffff;
+    color: rgb(34, 134, 216);
+}
+
+.page-footer {
+    grid-row: 3;
+    background: rgb(231, 229, 229);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    color: #616362;
+}
+
+.foot-left,
+.foot-middle,
+.foot-right {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-footer li {
+    margin: 10px 20px;
+
+}
+
+
+
+
+@media only screen and (min-width: 668px) {
+    .item-burger-hidden {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 667px) {
+
+    /* hidden ce items */
+    .signin,
+    .search {
+        display: none;
+    }
+
+    .item-left {
+        width: 200px;
+    }
+
+    .item-right {
+        justify-content: flex-end;
+    }
+
+    .item-mobile {
+        position: relative;
+        display: block;
+        padding: 10px;
+        margin-bottom: 5px;
+        background: #817b7b;
+        border-bottom: 1px solid rgb(204, 197, 197);
+    }
+
+    .item-mobile {}
+
+    .burger {
+        /* position: absolute;
+        top: 60px;
+        left: 100px; */
+    }
+
+    /* side right */
+    .item-burger-visible li {
+        background: #cabfbf;
+        padding: 4px 4px;
+    }
+
+    .item-signin-mobile-hidden {
+        display: none;
+    }
+
+    .item {
+        display: block;
+    }
+
+    .item-signin-mobile-visible li {
+        color: #ffffff;
+    }
+
+    .item-signin-mobile-visible li:first-child {
+        border-bottom: 1px solid rgb(155, 149, 149);
+    }
+
+    .item-catalogue li {
+        color: #ffffff;
+        border-bottom: 1px solid rgb(155, 149, 149);
+    }
+
+    /* les hovers right side */
+    .item-catalogue li:hover{
+        color: rgb(155, 149, 149);
+        background:#ffffff;
+    }
+    .item-mobile li:hover{
+        color: rgb(155, 149, 149);
+        background:#ffffff;
+    }
+    .item-burger-hidden>li{
+        color: rgb(83, 74, 74);
+    }
+
+
+
+
+
+
+
+    .item-burger-hidden {
+        position: absolute;
+        righdt: -300px;
+        transform: translateX(180px);
+        transition: transform 1s;
+    }
+
+    .item .item-burger-hidden {
+        transform: translateX(10px);
+        transition: transform 1s;
+
+    }
+    .oxlibrary{
+        font-size: 25px;
+        
+    }
+
+   
+
+    .item-signin-mobile-hidden {}
+
+    .page-footer {
+        height: 100px;
+
+        flex-direction: column;
+        align-items: center;
+    }
 }
