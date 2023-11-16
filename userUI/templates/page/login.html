@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Connexion</h2>
+    <form action="{{ url_for('login') }}" method="post">
+        <label for="nom_connexion">Nom :</label>
+        <input type="text" name="nom_connexion" required><br>
+
+        <label for="password_connexion">Mot de passe :</label>
+        <input type="password" name="password_connexion" required><br>
+
+        <input type="submit" value="Se connecter">
+    </form>
+</body>
+</html>
