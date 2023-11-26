@@ -1,23 +1,41 @@
-import MySQLDatabase
-class MaBibliotequeFlask:
-    def __init__(self):
-        # self.app = Flask(__name__)
-        self.db = MySQLDatabase(host="localhost", user="root", password="0003", database="sqlDB")
-        self.db.connect()
-        self.create_tables()
+# # from mysqldatabase import MySQLDatabase
+# # import mysql.connector
 
-        # Définir les routes et les fonctions associées
+# class MaBibliotequeFlask:
+#     def __init__(self):
+#         # self.app = Flask(__name__)
+#         self.client = MongoClient('mongodb://localhost:27017/')
+#         self.db=self.client["myDB"]
+#         self.create_tables()
         
-        # self.app.add_url_rule('/', 'accueil', self.accueil)
-        # self.app.add_url_rule('/livres', 'liste_livres', self.liste_livres)
+#         # mysqlData=MySQLDatabase
 
-    def create_tables(self):
-        self.db.create_users_table()
+#         # Définir les routes et les fonctions associées
+        
+#         # self.app.add_url_rule('/', 'accueil', self.accueil)
+#         # self.app.add_url_rule('/livres', 'liste_livres', self.liste_livres)
 
-    # ... (autres méthodes et routes Flask)
+#     def create_tables(self):
+#         self.db.create_users_table()
 
-    # def run(self):
-    #     self.app.run(debug=True)  # Exécute l'application Flask
+#     # ... (autres méthodes et routes Flask)
 
-# Création d'une instance de la bibliothèque Flask
-ma_biblioteque = MaBibliotequeFlask()
+#     # def run(self):
+#     #     self.app.run(debug=True)  # Exécute l'application Flask
+
+# # Création d'une instance de la bibliothèque Flask
+# # ma_biblioteque = MaBibliotequeFlask()
+
+
+# from pymongo import MongoClient
+
+
+# # Connexion à MongoDB dans Docker avec la base de données 'myDB'
+# client = MongoClient('mongodb://localhost:27017/')
+# db = client['myDB']
+
+# # Création de la collection 'lesUsers' s'il n'existe pas
+# if 'lesUsers' not in db.list_collection_names():
+#     db.create_collection('lesUsers')
+
+# collection = db['lesUsers']

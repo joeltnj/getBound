@@ -12,5 +12,20 @@
     <h1>Welcome to My Library</h1>
     <p>User: {{ user }}</p>
     <p>Book: {{ book }}</p>
+    <ul>
+        <li><a href="#">connect</a>yes !</li>
+    </ul>
+    <section>
+        <h2>Connexion</h2>
+        <form action="{{ url_for('connexion') }}" method="post">
+            <label for="nom_connexion">Nom :</label>
+            <input type="text" name="nom_connexion" required><br>
+    
+            <label for="password_connexion">Mot de passe :</label>
+            <input type="password" name="password_connexion" required><br>
+    
+            <input type="submit" value="Se connecter">
+        </form>
+    </section>
 </body>
 </html>
