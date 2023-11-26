@@ -50,7 +50,8 @@ def login_valider():
         return redirect(url_for('jeux'))
     else:
         # Échec de la connexion
-        return "Nom d'utilisateur ou mot de passe incorrect."
+        # return "Nom d'utilisateur ou mot de passe incorrect."
+        return render_template('page/login.html')
 
     
     
