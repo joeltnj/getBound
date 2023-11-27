@@ -15,6 +15,18 @@
     <ul>
         <li><a href="#">connect</a>yes !</li>
     </ul>
+    <aside>
+        <h2>Inscription</h2>
+        <form action="{{ url_for('inscription') }}" method="post">
+            <label for="nom">Nom :</label>
+            <input type="text" name="nom" required><br>
+    
+            <label for="password">Mot de passe :</label>
+            <input type="password" name="password" required><br>
+    
+            <input type="submit" value="Inscrire">
+        </form>
+    </aside>
     <section>
         <h2>Connexion</h2>
         <form action="{{ url_for('connexion') }}" method="post">

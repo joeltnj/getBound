@@ -1,4 +1,3 @@
-from flask import Flask
 from pymongo import MongoClient
 
 class MongoDBDatabase:
@@ -8,6 +7,8 @@ class MongoDBDatabase:
         self.database = database
         self.client = None
         self.db = None
+        # self.client = MongoClient(self.host, self.port)
+        # self.db = self.client[self.database]
 
     def connect(self):
         self.client = MongoClient(self.host, self.port)

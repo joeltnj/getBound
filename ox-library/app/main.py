@@ -1,29 +1,22 @@
-# # my_library_project/app/main.py
+from pymongo import MongoClient
+from models.mongodatabase import MongoDBDatabase
 
-# from .models.user import User
-# from .models.mysqldatabase import MySQLDatabase
-# from .models.mabibliotequeflask import MaBibliotequeFlask
-from .models.mongodatabase import MongoDBDatabase
+class Main:
+    def __init__(self):
+        self.mongoclient = MongoClient("localhost",27017)
+        self.mongodb=self.mongoclient["myDB"]
 
 
+    def connexionToBD(self):
+        # mongo_config = {"host": "localhost", "port": 27017, "database": "myDB"}
+        # self.mongoclient = MongoDBDatabase("localhost",27107)
+        # self.mongodb.connect()
+        # self.mongodb=self.mongoclient["myDB"]
+        
+        self.mongodb.create_users_collection()
 
-# from .models.book import Book
+    # def connexionLogin(self, name, password):
+        
 
-# class Main:
-#     def __init__(self):
-#         self.users = []
-#         self.books = []
 
-#     def add_user(self, user):
-#         self.users.append(user)
-
-#     def add_library(self, library):
-#         self.libraries.append(library)
-
-#     def add_librarian(self, librarian):
-#         self.librarians.append(librarian)
-
-#     def add_book(self, book):
-#         self.books.append(book)
-
-#     # Ajoutez d'autres méthodes ou fonctionnalités selon vos besoins
+ 
