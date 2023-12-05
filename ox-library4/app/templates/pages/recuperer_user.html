@@ -1,0 +1,18 @@
+<!-- app/templates/recuperer_user.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Récupération de l'utilisateur</title>
+</head>
+<body>
+    <h1>Récupération de l'utilisateur</h1>
+    {% if user %}
+        <p>Utilisateur récupéré : {{ user.username }} ({{ user.email }})</p>
+    {% else %}
+        <p>Aucun utilisateur trouvé.</p>
+    {% endif %}
+</body>
+</html>

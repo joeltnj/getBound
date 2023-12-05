@@ -1,0 +1,18 @@
+<!-- app/templates/connexion_base_de_donnees.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification de la connexion à la base de données</title>
+</head>
+<body>
+    <h1>Vérification de la connexion à la base de données</h1>
+    {% if connected %}
+        <p style="color: green;">{{ message }}</p>
+    {% else %}
+        <p style="color: red;">{{ message }}</p>
+    {% endif %}
+</body>
+</html>
