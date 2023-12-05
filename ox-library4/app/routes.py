@@ -19,11 +19,12 @@ def sauvegarder_user():
 
     message = gestionnaire.sauvegarder_user(new_username, new_password, new_email)
     
-    return render_template('pages/sauvegarder_user.html', message=message)
+    # return render_template('pages/sauvegarder_user.html', message=message)
+    return render_template('pages/seconnecter.html')
 
-@app.route('/recuperer_user')
-def recuperer_user():
-    user_id = 1  # Remplacez par l'ID spécifique que vous recherchez
+@app.route('/recuperer_user <int:user_id>')
+def recuperer_user(user_id):
+    # user_id = 6  # Remplacez par l'ID spécifique que vous recherchez
     retrieved_user = gestionnaire.get_user(user_id)
 
     if retrieved_user:
@@ -44,7 +45,7 @@ def seconnecter():
 
     if user and user.role == 'user' and check_password(user.password, password):
         session['user_id'] = user.id  # Stockez l'ID de l'utilisateur dans la session
-        return render_template('pages/seconnecter.html', user=user)
+        return render_template('pages/seconnecter.html',user=user) #, user=user)
     elif user and user.role == 'admin' and check_password(user.password, password):
         session['user_id'] = user.id  # Stockez l'ID de l'utilisateur dans la session
         return render_template('pages/admin.html', user=user)
@@ -56,3 +57,29 @@ def seconnecter():
 def check_password(hashed_password, user_password):
     # À implémenter en fonction de votre méthode de hachage
     return hashed_password == user_password
+
+@app.route('/modifier_infos/', methods=['GET', 'POST'])
+def modifier_infos():
+    # Assurez-vous que l'utilisateur est authentifié en vérifiant s'il existe dans la session
+    if 'user_id' not in session:
+        return redirect(url_for('index'))
+
+    # Obtenez l'utilisateur à partir de la session
+    user_id_session = session['user_id']
+    user = gestionnaire.get_user(user_id_session)
+
+    # Gérez le cas où l'utilisateur n'existe pas
+    if user is None:
+        return redirect(url_for('index'))
+
+    if request.method == 'POST':
+        nouveau_nom = request.form.get('username')
+        nouveau_password = request.form.get('password')
+        nouveau_email = request.form.get('email')
+
+        message = gestionnaire.modifier_infos(user, nouveau_nom, nouveau_password, nouveau_email)
+
+        # Utilisez user_id dans l'URL pour la redirection
+        return redirect(url_for('recuperer_user', user_id=user.id, message=message))
+
+    return render_template('pages/modifier_infos.html', user=user)

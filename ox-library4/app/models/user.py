@@ -38,3 +38,11 @@ class User(db.Model):
 
     def __repr__(self):
         return f'<User {self.username}>'
+
+    def modifier_infos(self, nom, password, mail):
+            self.username = nom
+            self.password = password
+            self.email = mail
+
+    def sauvegarder_modifications(self):
+        db.session.commit()

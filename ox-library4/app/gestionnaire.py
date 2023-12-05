@@ -4,8 +4,11 @@ from app import db
 
 class Gestionnaire:
     @staticmethod
-    def get_user(username):
-        retrieved_user = User.query.filter_by(username=username).first()
+    def get_user(identifier):
+        if isinstance(identifier, int):
+            retrieved_user = User.query.get(identifier)
+        else:
+            retrieved_user = User.query.filter_by(username=identifier).first()
         return retrieved_user
 
     @staticmethod
@@ -25,4 +28,19 @@ class Gestionnaire:
                 db.session.rollback()
                 message = f'Erreur lors de la sauvegarde de l\'utilisateur : {str(e)}'
 
+        return message
+
+
+    @staticmethod
+    def modifier_infos(user, nouveau_nom, nouveau_password, nouveau_email):
+        user.username = nouveau_nom
+        user.password = nouveau_password
+        user.email = nouveau_email
+
+        try:
+            db.session.commit()
+            message = 'Informations utilisateur modifiées avec succès'
+        except Exception as e:
+            db.session.rollback()
+            message = f'Erreur lors de la modification des informations de l\'utilisateur : {str(e)}'
         return message

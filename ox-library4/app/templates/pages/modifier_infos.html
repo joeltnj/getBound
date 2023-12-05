@@ -1,16 +1,16 @@
+<!-- templates/modifier_infos.html -->
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Modifier Informations Utilisateur</title>
 </head>
-
 <body>
-    <p>je suis connecter</p>
     <h1>Modifier Informations Utilisateur</h1>
-    <!-- <form action="/modifier_infos" method="post">
+    <h1>Modifier Informations Utilisateur</h1>
+    <form action="{{ url_for('modifier_infos') }}" method="post">
         <label for="username">Nouveau Nom d'utilisateur:</label>
         <input type="text" id="username" name="username" required>
         <br>
@@ -24,14 +24,6 @@
         <br>
 
         <input type="submit" value="Modifier Informations">
-    </form> -->
-
-    <!-- jdjd -->
-    <a href="{{ url_for('modifier_infos', user_id=user.id) }}">Modifier Infos après connexion</a>
-
-
-    
-
+    </form>
 </body>
-
 </html>
