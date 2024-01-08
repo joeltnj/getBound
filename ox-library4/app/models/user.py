@@ -34,7 +34,18 @@ class User(db.Model):
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)  # Ajoutez ce champ pour le mot de passe
     email = db.Column(db.String(120), unique=True, nullable=False)
-    role = db.Column(db.String(20), default='user')  # Ajoutez ce champ pour le rôle, par défaut 'user'
+    
+    # #ajout
+
+    # penalite = db.Column(db.Integer, default=0)
+    # montant_amende = db.Column(db.Float, default=0.0)
+    # livres_empruntes = db.Column(db.PickleType) # on va user de PickleType pour stocker une liste
+    
+    #fin ajout
+    
+    
+    
+    role = db.Column(db.String(20), default='user')  # ici jai ajouter ce champ pour le rôle, par défaut 'user'
 
     def __repr__(self):
         return f'<User {self.username}>'

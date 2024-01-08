@@ -24,7 +24,7 @@ def sauvegarder_user():
 
 @app.route('/recuperer_user <int:user_id>')
 def recuperer_user(user_id):
-    # user_id = 6  # Remplacez par l'ID spécifique que vous recherchez
+    # user_id = 6  # ici est un prototype que je remplace par l'ID spécifique que je recherchez
     retrieved_user = gestionnaire.get_user(user_id)
 
     if retrieved_user:
@@ -33,7 +33,7 @@ def recuperer_user(user_id):
         message = "Aucun utilisateur trouvé."
         return render_template('pages/recuperer_user.html', message=message)
 # pour un abonner
-# Exemple de configuration de session dans votre route seconnecter
+
 
 
 @app.route('/seconnecter', methods=['POST'])
@@ -53,22 +53,22 @@ def seconnecter():
         message = "Connexion échouée. Vérifiez vos informations d'identification."
         return render_template('pages/connexion_echouee.html', message=message)
 
-# Ajoutez une fonction pour vérifier le mot de passe (peut varier en fonction de votre implémentation de hachage)
+#  fonction pour vérifier le mot de passe
 def check_password(hashed_password, user_password):
-    # À implémenter en fonction de votre méthode de hachage
+    
     return hashed_password == user_password
 
 @app.route('/modifier_infos/', methods=['GET', 'POST'])
 def modifier_infos():
-    # Assurez-vous que l'utilisateur est authentifié en vérifiant s'il existe dans la session
+    # on assure que l'userr est authentifié en vérifiant s'il existe dans la session
     if 'user_id' not in session:
         return redirect(url_for('index'))
 
-    # Obtenez l'utilisateur à partir de la session
+    # je get l'utilisateur àpartir de la session "il faut que je bouquine comment fonctionne les sessions"
     user_id_session = session['user_id']
     user = gestionnaire.get_user(user_id_session)
 
-    # Gérez le cas où l'utilisateur n'existe pas
+    # ici on jere le cas où user n'existe pas
     if user is None:
         return redirect(url_for('index'))
 
@@ -79,7 +79,7 @@ def modifier_infos():
 
         message = gestionnaire.modifier_infos(user, nouveau_nom, nouveau_password, nouveau_email)
 
-        # Utilisez user_id dans l'URL pour la redirection
+        # ce user_id est usee dans l'URL pour la redirection
         return redirect(url_for('recuperer_user', user_id=user.id, message=message))
 
     return render_template('pages/modifier_infos.html', user=user)
