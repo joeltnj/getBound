@@ -10,20 +10,21 @@
 <body>
     <h1>Modifier Informations Utilisateur</h1>
     <h1>Modifier Informations Utilisateur</h1>
-    <form action="{{ url_for('modifier_infos') }}" method="post">
-        <label for="username">Nouveau Nom d'utilisateur:</label>
-        <input type="text" id="username" name="username" required>
+    <form action="{{ url_for('update_infos') }}" method="post">
+        
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required>
         <br>
-
-        <label for="password">Nouveau Mot de passe:</label>
+        <label for="prenom">Nom d'utilisateur:</label>
+        <input type="text" id="prenom" name="prenom" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Mot de passe:</label>
         <input type="password" id="password" name="password" required>
         <br>
 
-        <label for="email">Nouveau Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-
-        <input type="submit" value="Modifier Informations">
-    </form>
+        <input type="submit" value="S'enregistrer">
 </body>
 </html>

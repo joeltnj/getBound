@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infos</title>
+  </head>
+  <body>
+    <h1>page INFO</h1>
+    <h3>Modifier Informations Utilisateur</h3>
+    <!-- url pour executer la route 'index' qui nous amene a la page index.html -->
+    <li>
+      <a href="{{url_for('index')}}">retour accueil</a>
+    </li>
+
+    <form action="{{ url_for('update_infos') }}" method="post">
+      <label for="nom">Nouveau Nom d'utilisateur:</label>
+      <input type="text" id="nom" name="nom" required />
+      <br />
+
+      <label for="prenom">Nouveau prenom d'utili:</label>
+      <input type="text" id="prenom" name="prenom" required />
+      <br />
+
+      <label for="password">Nouveau Mot de passe:</label>
+      <input type="password" id="password" name="password" required />
+      <br />
+
+      <label for="email">Nouveau Email:</label>
+      <input type="email" id="email" name="email" required />
+      <br />
+
+      <input type="submit" value="Modifier Informations" />
+      
+    </form>
+    <li>
+        <p>{{user.nom}}</p>
+        <p>{{user.prenom}}</p>
+        <p>{{user.mail}}</p>
+        <p>{{user. mot_de_passe}}</p>
+    </li>
+    <li><a href="{{url_for('logout')}}">se deconnecter</a></li>
+  </body>
+</html>

@@ -8,18 +8,31 @@
     <title>Enregistrement Utilisateur</title>
 </head>
 <body>
+    <section>
+        <ul>
+            <li><a href="{{url_for('infos')}}">voir infos</a></li>
+            <li><a href="{{url_for('pret')}}">voir prets</a></li>
+            <li><a href="{{url_for('reservation')}}">voir reservations</a></li>
+            
+        </ul>
+    </section>
+    
     <h1>Enregistrement Utilisateur</h1>
     <form action="/sauvegarder_user" method="post">
-        <label for="username">Nom d'utilisateur:</label>
+        <label for="username">username:</label>
         <input type="text" id="username" name="username" required>
         <br>
-
-        <label for="password">Mot de passe:</label>
-        <input type="password" id="password" name="password" required>
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required>
         <br>
-
+        <label for="prenom">Nom d'utilisateur:</label>
+        <input type="text" id="prenom" name="prenom" required>
+        <br>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" name="password" required>
         <br>
 
         <input type="submit" value="S'enregistrer">
@@ -29,8 +42,8 @@
 
     <h2>Se Connecter</h2>
     <form action="/seconnecter" method="post">
-        <label for="loginUsername">Nom d'utilisateur:</label>
-        <input type="text" id="loginUsername" name="username" required>
+        <label for="pseudo">Nom d'utilisateur:</label>
+        <input type="text" id="pseudo" name="pseudo" required>
         <br>
 
         <label for="loginPassword">Mot de passe:</label>
